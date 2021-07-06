@@ -159,3 +159,54 @@ header img{
     width: 300px;
     text-align: center;
 }
+.menu-toggle{
+    display: flex;
+    flex-direction: column;
+    margin: 14px;
+    height: 20px;
+    display: none;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    left: -7px;
+    top: -5px;
+    z-index: 11;
+    cursor: pointer;
+}
+
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: rgb(37, 37, 37);
+    border-radius: 50px;
+    transition: all 0.5s;
+}
+
+.menu-toggle :nth-child(3){
+    width: 14px;
+}
+
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0 ;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100% ;
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+    transform: scale(0);
+}
